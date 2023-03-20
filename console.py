@@ -12,6 +12,39 @@ from models.amenity import Amenity
 from models.review import Review
 
 
+def err_manager(line, argc):
+    ''' manages errors while parsing '''
+    if not line:
+        print("** class name missing **")
+        return -1
+    argv = parse(line, argc)
+    if argv[0] not in HBNBCommand.classes:
+        print("** class doesn't exist **")
+        return -1
+
+    if argc in [1, 'variadic']:
+        return argv
+
+    if len(argv) < 2:
+        print("** instance id missing **")
+        return -1
+
+    cls_name, id = argv[0], argv[1]
+    keys = storage.all().keys()
+
+    if f'{cls_name}.{id}' not in keys:
+        print("** no instance found **")
+        return -1
+
+    if len(argv) == 2 and argc == 4:
+        print("** attribute name missing **")
+        return -1
+
+    if len(argv) == 3 and argc == 4:
+        print("** value missing **")
+        return -1
+    return argv
+
 class HBNBCommand(cmd.Cmd):
     """ Contains the functionality for the HBNB console"""
 
