@@ -10,3 +10,8 @@ FLUSH PRIVILEGES;
 -- granting the SELECT privilege for the user hbnb_dev in the db performance_schema
 GRANT SELECT ON performance_schema.* TO 'hbnb_dev'@'localhost';
 FLUSH PRIVILEGES;
+
+ALTER USER `hbnb_dev`@`localhost` IDENTIFIED BY 'hbnb_dev_pwd', `hbnb_dev`@`localhost` PASSWORD EXPIRE NEVER;
+
+
+hbnb_dev'@'localhost
