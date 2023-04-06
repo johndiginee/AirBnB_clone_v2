@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""Fabric script (based on the file 2-do_deploy_web_static.py) that creates
-and distributes an archive to your web servers, using the function deploy"""
+# Fabric script (based on the file 2-do_deploy_web_static.py) that creates
+# and distributes an archive to your web servers, using the function deploy
 import os.path
 import time
 from fabric.api import local
