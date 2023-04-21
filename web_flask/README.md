@@ -1,1 +1,1 @@
-# Solutions to tasks on AirBnB clone - Web framework
+# Solutions to tasks on AirBnB clone Web Framework
